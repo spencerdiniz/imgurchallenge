@@ -2,10 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,8 +21,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYp-VE-8oE">
                         <rect key="frame" x="0.0" y="0.0" width="340" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZSI-8y-ipn">
-                                <rect key="frame" x="0.0" y="0.0" width="340" height="240"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZSI-8y-ipn">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="194"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHw-Vh-MMs">
                                 <rect key="frame" x="0.0" y="184" width="340" height="56"/>
@@ -159,16 +159,22 @@
                                     <constraint firstItem="Zm7-Am-EYG" firstAttribute="leading" secondItem="NcV-Wt-Pkl" secondAttribute="trailing" id="spd-Ve-Avo"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="n6V-zT-55W">
+                                <rect key="frame" x="151.5" y="78.5" width="37" height="37"/>
+                                <color key="color" name="mainBackground"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aHw-Vh-MMs" firstAttribute="leading" secondItem="CYp-VE-8oE" secondAttribute="leading" id="2rX-cI-fZI"/>
+                            <constraint firstItem="aHw-Vh-MMs" firstAttribute="top" secondItem="ZSI-8y-ipn" secondAttribute="bottom" constant="-10" id="BOY-Zh-NRJ"/>
                             <constraint firstAttribute="trailing" secondItem="aHw-Vh-MMs" secondAttribute="trailing" id="ETb-VL-Xvs"/>
+                            <constraint firstItem="n6V-zT-55W" firstAttribute="centerY" secondItem="ZSI-8y-ipn" secondAttribute="centerY" id="KmW-6b-aur"/>
                             <constraint firstAttribute="bottom" secondItem="aHw-Vh-MMs" secondAttribute="bottom" id="UIT-Fr-MgA"/>
                             <constraint firstAttribute="trailing" secondItem="ZSI-8y-ipn" secondAttribute="trailing" id="bL7-qX-qoQ"/>
-                            <constraint firstAttribute="bottom" secondItem="ZSI-8y-ipn" secondAttribute="bottom" id="bud-Io-dPE"/>
                             <constraint firstItem="ZSI-8y-ipn" firstAttribute="leading" secondItem="CYp-VE-8oE" secondAttribute="leading" id="hIe-Dj-8B7"/>
                             <constraint firstItem="ZSI-8y-ipn" firstAttribute="top" secondItem="CYp-VE-8oE" secondAttribute="top" id="mKZ-nq-dzW"/>
+                            <constraint firstItem="n6V-zT-55W" firstAttribute="centerX" secondItem="ZSI-8y-ipn" secondAttribute="centerX" id="qhQ-wH-5Ap"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -182,6 +188,7 @@
                 <constraint firstAttribute="bottom" secondItem="CYp-VE-8oE" secondAttribute="bottom" id="yal-2O-x9n"/>
             </constraints>
             <connections>
+                <outlet property="activityIndicator" destination="n6V-zT-55W" id="e85-lz-1L3"/>
                 <outlet property="imageViewMain" destination="ZSI-8y-ipn" id="tLb-00-4Jg"/>
                 <outlet property="labelCommentCount" destination="DLP-z1-zu9" id="Phk-a8-WbT"/>
                 <outlet property="labelUpDownBalance" destination="aVz-D6-Wwg" id="yZS-Vq-Vlu"/>
@@ -196,7 +203,7 @@
         <image name="arrowtriangle.up.circle.fill" catalog="system" width="128" height="121"/>
         <image name="ellipsis.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
-        <image name="sampleImage" width="768" height="511"/>
+        <image name="imagePlaceholder" width="800" height="600"/>
         <namedColor name="highlightBackground">
             <color red="0.27843137254901962" green="0.29019607843137257" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -206,8 +213,5 @@
         <namedColor name="mainBackground">
             <color red="0.17254901960784313" green="0.1803921568627451" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

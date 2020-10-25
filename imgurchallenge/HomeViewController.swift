@@ -30,7 +30,11 @@ class HomeViewController: UIViewController {
                 return
             }
 
-            self?.galleries = galleries
+            let filteredGalleries = galleries.filter { (galleryInfo) -> Bool in
+                galleryInfo.images?.filter({ !$0.type.hasPrefix("video")}).count ?? 0 > 0
+            }
+
+            self?.galleries = filteredGalleries
             self?.collectionView.reloadData()
         }
     }
@@ -51,7 +55,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let galleryInfo = self.galleries[indexPath.item]
 
         let imageUrl: URL? = {
-            guard let coverImage = galleryInfo.images?.first(where: { $0.id == galleryInfo.cover }) else {
+            guard let coverImage = galleryInfo.images?.first(where: { $0.id == galleryInfo.cover && !$0.type.hasPrefix("video")}) else {
                 return nil
             }
 

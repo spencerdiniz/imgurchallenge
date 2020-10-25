@@ -10,4 +10,5 @@ import Foundation
 public struct ImgurImageInfo: Decodable {
     let id: String
     let link: String
+    let type: String
 }
