@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private let kCollectionViewMargin: CGFloat = 18.0
+    private let kCollectionViewCellHeight: CGFloat = 240.0
+
     @IBOutlet private weak var collectionView: UICollectionView!
 
     private let refreshControl = UIRefreshControl()
@@ -152,14 +155,14 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = {
             if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
                 if orientation == .landscapeLeft || orientation == .landscapeRight {
-                    return collectionView.bounds.width / 2.0 - 10.0
+                    return collectionView.bounds.width / 2.0 - (self.kCollectionViewMargin * 2.0)
                 }
             }
 
-            return collectionView.bounds.width
+            return collectionView.bounds.width - (self.kCollectionViewMargin * 2.0)
         }()
 
-        let size = CGSize(width: width, height: 240.0)
+        let size = CGSize(width: width, height: self.kCollectionViewCellHeight)
         return size
     }
 }
