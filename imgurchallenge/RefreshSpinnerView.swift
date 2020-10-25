@@ -12,10 +12,6 @@ class RefreshSpinnerView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        UIView.animate(withDuration: Constants.kDefaultAnimationDuration, delay: 0.0, options: [.repeat], animations: { [weak self] in
-            let degrees = CGFloat(180.0 * Double.pi / 180.0)
-            self?.imageViewSpinner.transform = CGAffineTransform(rotationAngle: degrees)
-        }, completion: nil)
+        self.imageViewSpinner.startRotating()
     }
 }
