@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
 
+    private let refreshControl = UIRefreshControl()
     private var galleries: [ImgurGalleryInfo] = []
 
     override func viewDidLoad() {
@@ -17,6 +18,7 @@ class HomeViewController: UIViewController {
 
         self.collectionView.register(UINib(nibName: "ImageFeedCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageFeedCardCollectionViewCell.reuseIdentifier)
 
+        self.setupCollectionView()
         self.loadGalleries()
     }
 
@@ -24,7 +26,42 @@ class HomeViewController: UIViewController {
         return .lightContent
     }
 
-    private func loadGalleries() {
+    private func setupCollectionView() {
+        self.refreshControl.tintColor = ColorPalette.highText
+        self.refreshControl.attributedTitle = nil
+        self.refreshControl.alpha = 0.0
+        self.refreshControl.addTarget(self, action: #selector(self.refreshGalleries), for: .valueChanged)
+        self.collectionView.refreshControl = refreshControl
+
+        if let refreshSpinnerView = Bundle.main.loadNibNamed("RefreshSpinnerView", owner: nil, options: nil)?.first as? RefreshSpinnerView {
+            refreshSpinnerView.translatesAutoresizingMaskIntoConstraints = false
+
+            self.refreshControl.addSubview(refreshSpinnerView)
+            refreshSpinnerView.topAnchor.constraint(equalTo: self.refreshControl.topAnchor).isActive = true
+            refreshSpinnerView.bottomAnchor.constraint(equalTo: self.refreshControl.bottomAnchor).isActive = true
+            refreshSpinnerView.leadingAnchor.constraint(equalTo: self.refreshControl.leadingAnchor).isActive = true
+            refreshSpinnerView.trailingAnchor.constraint(equalTo: self.refreshControl.trailingAnchor).isActive = true
+        }
+    }
+
+    @objc private func refreshGalleries() {
+        self.refreshControl.alpha = 0.0
+        UIView.animate(withDuration: Constants.kDefaultAnimationDuration) { [weak self] in
+            self?.refreshControl.alpha = 1.0
+        }
+
+        self.loadGalleries() {
+            DispatchQueue.main.async { [weak self] in
+                UIView.animate(withDuration: Constants.kDefaultAnimationDuration, delay: 0.0, options: []) {
+                    self?.refreshControl.alpha = 0.0
+                } completion: { _ in
+                    self?.refreshControl.endRefreshing()
+                }
+            }
+        }
+    }
+
+    private func loadGalleries(completion: (() -> Void)? = nil) {
         ImgurService.getTopOfWeek { [weak self] galleries in
             guard let galleries = galleries else {
                 return
@@ -35,7 +72,11 @@ class HomeViewController: UIViewController {
             }
 
             self?.galleries = filteredGalleries
-            self?.collectionView.reloadData()
+
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+                completion?()
+            }
         }
     }
 }

@@ -42,8 +42,6 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
 
     public func setup(_ imageFeedCard: ImageFeedCard) {
         if let imageUrl = imageFeedCard.imageUrl {
-            print(imageUrl)
-            
             self.activityIndicator.startAnimating()
             self.imageViewMain.kf.setImage(with: imageUrl, completionHandler: { result in
                 DispatchQueue.main.async {
