@@ -25,5 +25,21 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
 
         self.viewInfoBar.clipsToBounds = true
         self.viewInfoBar.layer.cornerRadius = 5.0
+
+        self.prepareForReuse()
+    }
+
+    override func prepareForReuse() {
+        self.imageViewMain.image = nil
+        self.labelViewCount.text = "0"
+        self.labelCommentCount.text = "0"
+        self.labelUpDownBalance.text = "0"
+    }
+
+    public func setup(_ imageFeedCard: ImageFeedCard) {
+//        self.imageViewMain.image = nil
+        self.labelViewCount.text = "\(imageFeedCard.views)"
+        self.labelCommentCount.text = "\(imageFeedCard.comments)"
+        self.labelUpDownBalance.text = "\(imageFeedCard.upDownBalance)"
     }
 }

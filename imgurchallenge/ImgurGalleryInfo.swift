@@ -14,5 +14,17 @@ public struct ImgurGalleryInfo: Decodable {
     let ups: Int
     let downs: Int
     let views: Int
+    let comments: Int
     let images: [ImgurImageInfo]?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case cover
+        case ups
+        case downs
+        case views
+        case comments = "comment_count"
+        case images
+    }
 }
