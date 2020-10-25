@@ -1,5 +1,5 @@
 //
-//  RefreshSpinnerView.swift
+//  PullToRefreshView.swift
 //  imgurchallenge
 //
 //  Created by Spencer Müller Diniz on 25/10/20.

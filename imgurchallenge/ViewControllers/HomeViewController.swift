@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         self.refreshControl.addTarget(self, action: #selector(self.refreshGalleries), for: .valueChanged)
         self.collectionView.refreshControl = refreshControl
 
-        if let refreshSpinnerView = Bundle.main.loadNibNamed("RefreshSpinnerView", owner: nil, options: nil)?.first as? RefreshSpinnerView {
+        if let refreshSpinnerView = Bundle.main.loadNibNamed("RefreshSpinnerView", owner: nil, options: nil)?.first as? PullToRefreshView {
             refreshSpinnerView.translatesAutoresizingMaskIntoConstraints = false
 
             self.refreshControl.addSubview(refreshSpinnerView)

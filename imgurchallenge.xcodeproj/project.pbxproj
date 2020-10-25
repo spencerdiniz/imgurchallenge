@@ -23,7 +23,7 @@
 		145E78022545F292002421A3 /* ImageFeedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E78012545F292002421A3 /* ImageFeedCard.swift */; };
 		145E78052545F690002421A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E78042545F690002421A3 /* Extensions.swift */; };
 		145E781825460C5A002421A3 /* RefreshSpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145E781725460C5A002421A3 /* RefreshSpinnerView.xib */; };
-		145E781B25460C71002421A3 /* RefreshSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E781A25460C71002421A3 /* RefreshSpinnerView.swift */; };
+		145E781B25460C71002421A3 /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E781A25460C71002421A3 /* PullToRefreshView.swift */; };
 		145E782325461934002421A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E782225461934002421A3 /* Constants.swift */; };
 		F1DA23466FB6D8BA81452D1F /* Pods_imgurchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72371B700C5D331A13AD598C /* Pods_imgurchallenge.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		145E78012545F292002421A3 /* ImageFeedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeedCard.swift; sourceTree = "<group>"; };
 		145E78042545F690002421A3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		145E781725460C5A002421A3 /* RefreshSpinnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshSpinnerView.xib; sourceTree = "<group>"; };
-		145E781A25460C71002421A3 /* RefreshSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshSpinnerView.swift; sourceTree = "<group>"; };
+		145E781A25460C71002421A3 /* PullToRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
 		145E782225461934002421A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2140CB996274D32B6B2DF603 /* Pods-imgurchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurchallenge.release.xcconfig"; path = "Target Support Files/Pods-imgurchallenge/Pods-imgurchallenge.release.xcconfig"; sourceTree = "<group>"; };
 		5CD9F72EBD4E0E23236E9E6E /* Pods-imgurchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurchallenge.debug.xcconfig"; path = "Target Support Files/Pods-imgurchallenge/Pods-imgurchallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,25 +89,65 @@
 			children = (
 				14352A6B2545BED100D546EB /* AppDelegate.swift */,
 				14352A6D2545BED100D546EB /* SceneDelegate.swift */,
+				145E782A2546313A002421A3 /* Helpers */,
+				145E78262546306A002421A3 /* ViewControllers */,
+				145E78272546309B002421A3 /* Views */,
+				145E7828254630DB002421A3 /* Services */,
+				14352A792545BED200D546EB /* Info.plist */,
+				14352A712545BED100D546EB /* Main.storyboard */,
+				14352A762545BED200D546EB /* LaunchScreen.storyboard */,
+				14352A742545BED200D546EB /* Assets.xcassets */,
+				145E77E52545C339002421A3 /* Colors.xcassets */,
+			);
+			path = imgurchallenge;
+			sourceTree = "<group>";
+		};
+		145E78262546306A002421A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				14352A6F2545BED100D546EB /* HomeViewController.swift */,
-				145E78042545F690002421A3 /* Extensions.swift */,
-				145E782225461934002421A3 /* Constants.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		145E78272546309B002421A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				145E781A25460C71002421A3 /* PullToRefreshView.swift */,
+				145E781725460C5A002421A3 /* RefreshSpinnerView.xib */,
 				145E78012545F292002421A3 /* ImageFeedCard.swift */,
 				145E77EB2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift */,
 				145E77EC2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib */,
-				14352A712545BED100D546EB /* Main.storyboard */,
-				14352A742545BED200D546EB /* Assets.xcassets */,
-				145E77E52545C339002421A3 /* Colors.xcassets */,
-				14352A762545BED200D546EB /* LaunchScreen.storyboard */,
-				14352A792545BED200D546EB /* Info.plist */,
-				14352A812545C0B500D546EB /* ColorPalette.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		145E7828254630DB002421A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
 				145E77F72545DF8F002421A3 /* ImgurService.swift */,
+				145E7829254630F5002421A3 /* ServiceModels */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		145E7829254630F5002421A3 /* ServiceModels */ = {
+			isa = PBXGroup;
+			children = (
 				145E77FA2545E9A0002421A3 /* ImgurGalleryInfo.swift */,
 				145E77FE2545EC31002421A3 /* ImgurImageInfo.swift */,
-				145E781A25460C71002421A3 /* RefreshSpinnerView.swift */,
-				145E781725460C5A002421A3 /* RefreshSpinnerView.xib */,
 			);
-			path = imgurchallenge;
+			path = ServiceModels;
+			sourceTree = "<group>";
+		};
+		145E782A2546313A002421A3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				145E78042545F690002421A3 /* Extensions.swift */,
+				145E782225461934002421A3 /* Constants.swift */,
+				14352A812545C0B500D546EB /* ColorPalette.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9E55665AA570848649A48DC0 /* Frameworks */ = {
@@ -252,7 +292,7 @@
 				145E77F82545DF8F002421A3 /* ImgurService.swift in Sources */,
 				14352A6E2545BED100D546EB /* SceneDelegate.swift in Sources */,
 				145E78052545F690002421A3 /* Extensions.swift in Sources */,
-				145E781B25460C71002421A3 /* RefreshSpinnerView.swift in Sources */,
+				145E781B25460C71002421A3 /* PullToRefreshView.swift in Sources */,
 				145E77ED2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift in Sources */,
 				14352A822545C0B500D546EB /* ColorPalette.swift in Sources */,
 				145E782325461934002421A3 /* Constants.swift in Sources */,

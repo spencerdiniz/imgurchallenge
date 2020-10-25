@@ -22,7 +22,6 @@ extension Int {
     }
 }
 
-
 extension UIView {
     private static let kRotationAnimationKey = "rotationanimationkey"
 
