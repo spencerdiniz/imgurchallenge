@@ -10,6 +10,8 @@ import UIKit
 class LoadErrorView: UIView {
     @IBOutlet private weak var imageViewErrorIcon: UIImageView!
 
+    public var actionCallback: (() -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -17,5 +19,9 @@ class LoadErrorView: UIView {
         self.imageViewErrorIcon.layer.borderWidth = 2.0
         self.imageViewErrorIcon.layer.cornerRadius = self.imageViewErrorIcon.bounds.width / 2.0
         self.imageViewErrorIcon.clipsToBounds = true
+    }
+
+    @IBAction func action(_ sender: UIButton) {
+        self.actionCallback?()
     }
 }

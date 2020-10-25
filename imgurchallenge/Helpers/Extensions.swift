@@ -44,3 +44,11 @@ extension UIView {
         }
     }
 }
+
+extension UIRefreshControl {
+    func programaticallyBeginRefreshing(in scrollView: UIScrollView) {
+        self.beginRefreshing()
+        let offsetPoint = CGPoint.init(x: 0, y: -frame.size.height)
+        scrollView.setContentOffset(offsetPoint, animated: true)
+    }
+}

@@ -37,6 +37,15 @@ class HomeViewController: UIViewController {
             loadErrorView.centerXAnchor.constraint(equalTo: self.collectionView.centerXAnchor).isActive = true
             loadErrorView.centerYAnchor.constraint(equalTo: self.collectionView.centerYAnchor).isActive = true
 
+            loadErrorView.actionCallback = { [weak self] in
+                guard let strongSelf = self else {
+                    return
+                }
+
+                strongSelf.refreshControl.programaticallyBeginRefreshing(in: strongSelf.collectionView)
+                strongSelf.refreshGalleries()
+            }
+
             loadErrorView.isHidden = true
             self.loadErrorView = loadErrorView
         }

@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-A5-FaK">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-A5-FaK">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconReload" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-mn-ajQ">
@@ -31,14 +31,24 @@
                             <color key="textColor" name="highlightText"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uO-gs-ydg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                            <connections>
+                                <action selector="action:" destination="iN0-l3-epB" eventType="touchUpInside" id="idz-VS-jU1"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="6uO-gs-ydg" firstAttribute="top" secondItem="5ze-A5-FaK" secondAttribute="top" id="2dd-wp-nev"/>
                         <constraint firstItem="3Dx-9a-ysn" firstAttribute="leading" secondItem="5ze-A5-FaK" secondAttribute="leading" id="4VW-5d-dHv"/>
                         <constraint firstItem="NO2-mn-ajQ" firstAttribute="top" secondItem="5ze-A5-FaK" secondAttribute="top" id="EJ6-Zb-7vE"/>
                         <constraint firstAttribute="trailing" secondItem="3Dx-9a-ysn" secondAttribute="trailing" id="Twb-EW-Tgq"/>
                         <constraint firstItem="3Dx-9a-ysn" firstAttribute="top" secondItem="NO2-mn-ajQ" secondAttribute="bottom" constant="22" id="VN2-w7-eL9"/>
+                        <constraint firstAttribute="bottom" secondItem="6uO-gs-ydg" secondAttribute="bottom" id="VrL-E2-ujg"/>
                         <constraint firstItem="NO2-mn-ajQ" firstAttribute="centerX" secondItem="5ze-A5-FaK" secondAttribute="centerX" id="YaJ-UR-Ye1"/>
+                        <constraint firstItem="6uO-gs-ydg" firstAttribute="leading" secondItem="5ze-A5-FaK" secondAttribute="leading" id="rJT-jm-AnU"/>
+                        <constraint firstAttribute="trailing" secondItem="6uO-gs-ydg" secondAttribute="trailing" id="ujy-MO-IS5"/>
                         <constraint firstAttribute="bottom" secondItem="3Dx-9a-ysn" secondAttribute="bottom" id="xRL-8u-0im"/>
                     </constraints>
                 </view>
