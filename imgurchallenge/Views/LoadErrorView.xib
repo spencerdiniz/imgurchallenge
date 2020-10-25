@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="LoadErrorView" customModule="imgurchallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-A5-FaK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconReload" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-mn-ajQ">
+                            <rect key="frame" x="177" y="0.0" width="60" height="60"/>
+                            <color key="tintColor" name="highlightText"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="FOq-xp-anG"/>
+                                <constraint firstAttribute="width" constant="60" id="mJA-W7-WfK"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh, failed to load galleries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dx-9a-ysn">
+                            <rect key="frame" x="0.0" y="82" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="highlightText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3Dx-9a-ysn" firstAttribute="leading" secondItem="5ze-A5-FaK" secondAttribute="leading" id="4VW-5d-dHv"/>
+                        <constraint firstItem="NO2-mn-ajQ" firstAttribute="top" secondItem="5ze-A5-FaK" secondAttribute="top" id="EJ6-Zb-7vE"/>
+                        <constraint firstAttribute="trailing" secondItem="3Dx-9a-ysn" secondAttribute="trailing" id="Twb-EW-Tgq"/>
+                        <constraint firstItem="3Dx-9a-ysn" firstAttribute="top" secondItem="NO2-mn-ajQ" secondAttribute="bottom" constant="22" id="VN2-w7-eL9"/>
+                        <constraint firstItem="NO2-mn-ajQ" firstAttribute="centerX" secondItem="5ze-A5-FaK" secondAttribute="centerX" id="YaJ-UR-Ye1"/>
+                        <constraint firstAttribute="bottom" secondItem="3Dx-9a-ysn" secondAttribute="bottom" id="xRL-8u-0im"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5ze-A5-FaK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BEB-ga-nbp"/>
+                <constraint firstAttribute="trailing" secondItem="5ze-A5-FaK" secondAttribute="trailing" id="Slq-Cg-MQd"/>
+                <constraint firstAttribute="bottom" secondItem="5ze-A5-FaK" secondAttribute="bottom" constant="0.5" id="c3h-Aa-Kdm"/>
+                <constraint firstItem="5ze-A5-FaK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iFz-AT-pLi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageViewErrorIcon" destination="NO2-mn-ajQ" id="715-pR-BRu"/>
+            </connections>
+            <point key="canvasLocation" x="72" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconReload" width="40" height="40"/>
+        <namedColor name="highlightText">
+            <color red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

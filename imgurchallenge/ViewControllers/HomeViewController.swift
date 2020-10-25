@@ -8,22 +8,38 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private let refreshControl = UIRefreshControl()
     private var galleries: [ImgurGalleryInfo] = []
+    private var loadErrorView: LoadErrorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView.register(UINib(nibName: "ImageFeedCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageFeedCardCollectionViewCell.reuseIdentifier)
 
+        self.setupErrorView()
         self.setupCollectionView()
+        self.setupErrorView()
         self.loadGalleries()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    private func setupErrorView() {
+        if let loadErrorView = Bundle.main.loadNibNamed("LoadErrorView", owner: nil, options: nil)?.first as? LoadErrorView {
+            loadErrorView.translatesAutoresizingMaskIntoConstraints = false
+            self.collectionView.addSubview(loadErrorView)
+
+            loadErrorView.centerXAnchor.constraint(equalTo: self.collectionView.centerXAnchor).isActive = true
+            loadErrorView.centerYAnchor.constraint(equalTo: self.collectionView.centerYAnchor).isActive = true
+
+            loadErrorView.isHidden = true
+            self.loadErrorView = loadErrorView
+        }
     }
 
     private func setupCollectionView() {
@@ -64,9 +80,17 @@ class HomeViewController: UIViewController {
     private func loadGalleries(completion: (() -> Void)? = nil) {
         ImgurService.getTopOfWeek { [weak self] galleries in
             guard let galleries = galleries else {
+                DispatchQueue.main.async {
+                    self?.galleries = []
+                    self?.collectionView.reloadData()
+                    self?.loadErrorView?.isHidden = false
+                    completion?()
+                }
+
                 return
             }
 
+            self?.loadErrorView?.isHidden = true
             let filteredGalleries = galleries.filter { (galleryInfo) -> Bool in
                 galleryInfo.images?.filter({ !$0.type.hasPrefix("video")}).count ?? 0 > 0
             }

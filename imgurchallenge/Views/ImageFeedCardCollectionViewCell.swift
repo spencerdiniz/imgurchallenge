@@ -30,7 +30,7 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
 
         self.imageViewSpinner.layer.borderColor = ColorPalette.mainText?.cgColor
         self.imageViewSpinner.layer.borderWidth = 2.0
-        self.imageViewSpinner.layer.cornerRadius = imageViewSpinner.bounds.width / 2.0
+        self.imageViewSpinner.layer.cornerRadius = self.imageViewSpinner.bounds.width / 2.0
         self.imageViewSpinner.clipsToBounds = true
 
         self.prepareForReuse()
@@ -48,9 +48,9 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
         if let imageUrl = imageFeedCard.imageUrl {
             self.startSpinner()
             self.imageViewMain.kf.setImage(with: imageUrl, completionHandler: { [weak self] result in
-                self?.stopSpinner()
-
                 DispatchQueue.main.async {
+                    self?.stopSpinner()
+
                     switch result {
                     case .failure(_):
                         self?.imageViewMain.image = UIImage(named: "imagePlaceholder")
