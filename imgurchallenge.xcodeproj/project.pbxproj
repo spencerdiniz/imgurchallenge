@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		145E77E62545C339002421A3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145E77E52545C339002421A3 /* Colors.xcassets */; };
 		145E77ED2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E77EB2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift */; };
 		145E77EE2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145E77EC2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib */; };
+		145E77F82545DF8F002421A3 /* ImgurService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E77F72545DF8F002421A3 /* ImgurService.swift */; };
+		145E77FB2545E9A0002421A3 /* ImgurGalleryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E77FA2545E9A0002421A3 /* ImgurGalleryInfo.swift */; };
+		145E77FF2545EC31002421A3 /* ImgurImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E77FE2545EC31002421A3 /* ImgurImageInfo.swift */; };
 		F1DA23466FB6D8BA81452D1F /* Pods_imgurchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72371B700C5D331A13AD598C /* Pods_imgurchallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		145E77E52545C339002421A3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		145E77EB2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeedCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		145E77EC2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageFeedCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		145E77F72545DF8F002421A3 /* ImgurService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurService.swift; sourceTree = "<group>"; };
+		145E77FA2545E9A0002421A3 /* ImgurGalleryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurGalleryInfo.swift; sourceTree = "<group>"; };
+		145E77FE2545EC31002421A3 /* ImgurImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurImageInfo.swift; sourceTree = "<group>"; };
 		2140CB996274D32B6B2DF603 /* Pods-imgurchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurchallenge.release.xcconfig"; path = "Target Support Files/Pods-imgurchallenge/Pods-imgurchallenge.release.xcconfig"; sourceTree = "<group>"; };
 		5CD9F72EBD4E0E23236E9E6E /* Pods-imgurchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurchallenge.debug.xcconfig"; path = "Target Support Files/Pods-imgurchallenge/Pods-imgurchallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		72371B700C5D331A13AD598C /* Pods_imgurchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imgurchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +88,9 @@
 				14352A762545BED200D546EB /* LaunchScreen.storyboard */,
 				14352A792545BED200D546EB /* Info.plist */,
 				14352A812545C0B500D546EB /* ColorPalette.swift */,
+				145E77F72545DF8F002421A3 /* ImgurService.swift */,
+				145E77FA2545E9A0002421A3 /* ImgurGalleryInfo.swift */,
+				145E77FE2545EC31002421A3 /* ImgurImageInfo.swift */,
 			);
 			path = imgurchallenge;
 			sourceTree = "<group>";
@@ -220,7 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				14352A702545BED100D546EB /* HomeViewController.swift in Sources */,
+				145E77FB2545E9A0002421A3 /* ImgurGalleryInfo.swift in Sources */,
+				145E77FF2545EC31002421A3 /* ImgurImageInfo.swift in Sources */,
 				14352A6C2545BED100D546EB /* AppDelegate.swift in Sources */,
+				145E77F82545DF8F002421A3 /* ImgurService.swift in Sources */,
 				14352A6E2545BED100D546EB /* SceneDelegate.swift in Sources */,
 				145E77ED2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift in Sources */,
 				14352A822545C0B500D546EB /* ColorPalette.swift in Sources */,

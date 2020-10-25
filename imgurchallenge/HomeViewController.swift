@@ -14,6 +14,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         self.collectionView.register(UINib(nibName: "ImageFeedCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageFeedCardCollectionViewCell.reuseIdentifier)
+
+        ImgurService.getTopOfWeek { galleries in
+            print("done")
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
