@@ -115,7 +115,18 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: collectionView.frame.width, height: 240.0)
+
+        let width: CGFloat = {
+            if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
+                if orientation == .landscapeLeft || orientation == .landscapeRight {
+                    return collectionView.bounds.width / 2.0 - 10.0
+                }
+            }
+
+            return collectionView.bounds.width
+        }()
+
+        let size = CGSize(width: width, height: 240.0)
         return size
     }
 }

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reloadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Eb-Py-drx">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconReload" translatesAutoresizingMaskIntoConstraints="NO" id="0Eb-Py-drx">
                     <rect key="frame" x="189" y="12" width="36" height="36"/>
                     <color key="tintColor" name="mainText"/>
                     <constraints>
@@ -40,7 +40,7 @@
         </view>
     </objects>
     <resources>
-        <image name="reloadIcon" width="37" height="33"/>
+        <image name="iconReload" width="37" height="33"/>
         <namedColor name="mainBackground">
             <color red="0.17254901960784313" green="0.1803921568627451" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

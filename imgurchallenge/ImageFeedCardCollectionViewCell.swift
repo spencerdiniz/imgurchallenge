@@ -17,7 +17,6 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var labelCommentCount: UILabel!
     @IBOutlet private weak var labelViewCount: UILabel!
     @IBOutlet private weak var viewInfoBar: UIView!
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,20 +32,16 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         self.imageViewMain.kf.cancelDownloadTask()
-        self.imageViewMain.image = UIImage(named: "imagePlaceholder")
+        self.imageViewMain.image = nil
         self.labelViewCount.text = "0"
         self.labelCommentCount.text = "0"
         self.labelUpDownBalance.text = "0"
-        self.activityIndicator.stopAnimating()
     }
 
     public func setup(_ imageFeedCard: ImageFeedCard) {
         if let imageUrl = imageFeedCard.imageUrl {
-            self.activityIndicator.startAnimating()
             self.imageViewMain.kf.setImage(with: imageUrl, completionHandler: { result in
                 DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-
                     switch result {
                     case .failure(_):
                         self.imageViewMain.image = UIImage(named: "noImagePlaceholder")
@@ -57,7 +52,6 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
             })
         }
         else {
-            self.activityIndicator.stopAnimating()
             self.imageViewMain.image = UIImage(named: "noImagePlaceholder")
         }
 
