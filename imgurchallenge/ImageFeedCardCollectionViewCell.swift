@@ -17,6 +17,7 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var labelCommentCount: UILabel!
     @IBOutlet private weak var labelViewCount: UILabel!
     @IBOutlet private weak var viewInfoBar: UIView!
+    @IBOutlet private weak var imageViewSpinner: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,11 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
 
         self.viewInfoBar.clipsToBounds = true
         self.viewInfoBar.layer.cornerRadius = 5.0
+
+        self.imageViewSpinner.layer.borderColor = ColorPalette.mainText?.cgColor
+        self.imageViewSpinner.layer.borderWidth = 2.0
+        self.imageViewSpinner.layer.cornerRadius = imageViewSpinner.bounds.width / 2.0
+        self.imageViewSpinner.clipsToBounds = true
 
         self.prepareForReuse()
     }
@@ -40,11 +46,14 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
 
     public func setup(_ imageFeedCard: ImageFeedCard) {
         if let imageUrl = imageFeedCard.imageUrl {
-            self.imageViewMain.kf.setImage(with: imageUrl, completionHandler: { result in
+            self.startSpinner()
+            self.imageViewMain.kf.setImage(with: imageUrl, completionHandler: { [weak self] result in
+                self?.stopSpinner()
+
                 DispatchQueue.main.async {
                     switch result {
                     case .failure(_):
-                        self.imageViewMain.image = UIImage(named: "noImagePlaceholder")
+                        self?.imageViewMain.image = UIImage(named: "imagePlaceholder")
                     default:
                         break
                     }
@@ -52,11 +61,22 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
             })
         }
         else {
-            self.imageViewMain.image = UIImage(named: "noImagePlaceholder")
+            self.imageViewSpinner.isHidden = true
+            self.imageViewMain.image = UIImage(named: "imagePlaceholder")
         }
 
         self.labelViewCount.text = "\(imageFeedCard.views)"
         self.labelCommentCount.text = "\(imageFeedCard.comments)"
         self.labelUpDownBalance.text = "\(imageFeedCard.upDownBalance)"
+    }
+
+    private func startSpinner() {
+        self.imageViewSpinner.isHidden = false
+        self.imageViewSpinner.startRotating()
+    }
+
+    private func stopSpinner() {
+        self.imageViewSpinner.isHidden = true
+        self.imageViewSpinner.stopRotating()
     }
 }

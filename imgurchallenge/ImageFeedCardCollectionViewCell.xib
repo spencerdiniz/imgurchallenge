@@ -24,6 +24,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSI-8y-ipn">
                                 <rect key="frame" x="0.0" y="0.0" width="340" height="194"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconReload" translatesAutoresizingMaskIntoConstraints="NO" id="iI1-nV-Q1X">
+                                <rect key="frame" x="140" y="67" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="KOF-r7-T9p"/>
+                                    <constraint firstAttribute="height" constant="60" id="sgn-i6-Rhc"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHw-Vh-MMs">
                                 <rect key="frame" x="0.0" y="184" width="340" height="56"/>
                                 <subviews>
@@ -168,7 +175,9 @@
                             <constraint firstAttribute="bottom" secondItem="aHw-Vh-MMs" secondAttribute="bottom" id="UIT-Fr-MgA"/>
                             <constraint firstAttribute="trailing" secondItem="ZSI-8y-ipn" secondAttribute="trailing" id="bL7-qX-qoQ"/>
                             <constraint firstItem="ZSI-8y-ipn" firstAttribute="leading" secondItem="CYp-VE-8oE" secondAttribute="leading" id="hIe-Dj-8B7"/>
+                            <constraint firstItem="iI1-nV-Q1X" firstAttribute="centerY" secondItem="ZSI-8y-ipn" secondAttribute="centerY" id="lgi-wm-kdN"/>
                             <constraint firstItem="ZSI-8y-ipn" firstAttribute="top" secondItem="CYp-VE-8oE" secondAttribute="top" id="mKZ-nq-dzW"/>
+                            <constraint firstItem="iI1-nV-Q1X" firstAttribute="centerX" secondItem="ZSI-8y-ipn" secondAttribute="centerX" id="web-a8-RKa"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -183,6 +192,7 @@
             </constraints>
             <connections>
                 <outlet property="imageViewMain" destination="ZSI-8y-ipn" id="tLb-00-4Jg"/>
+                <outlet property="imageViewSpinner" destination="iI1-nV-Q1X" id="xWS-IH-mb1"/>
                 <outlet property="labelCommentCount" destination="DLP-z1-zu9" id="Phk-a8-WbT"/>
                 <outlet property="labelUpDownBalance" destination="aVz-D6-Wwg" id="yZS-Vq-Vlu"/>
                 <outlet property="labelViewCount" destination="jBB-Wo-fmo" id="0ME-yY-2Qc"/>
@@ -195,6 +205,7 @@
     <resources>
         <image name="iconBalance" width="16" height="16"/>
         <image name="iconComments" width="16" height="16"/>
+        <image name="iconReload" width="40" height="40"/>
         <image name="iconViews" width="20" height="14"/>
         <namedColor name="highlightBackground">
             <color red="0.27843137254901962" green="0.29019607843137257" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -12,5 +12,5 @@ class ColorPalette {
     static let mainBackground = UIColor(named: "mainBackground")
     static let highlightBackground = UIColor(named: "highlightBackground")
     static let mainText = UIColor(named: "mainText")
-    static let highText = UIColor(named: "highlightText")
+    static let highlightText = UIColor(named: "highlightText")
 }

@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     }
 
     private func setupCollectionView() {
-        self.refreshControl.tintColor = ColorPalette.highText
+        self.refreshControl.tintColor = ColorPalette.highlightText
         self.refreshControl.attributedTitle = nil
         self.refreshControl.alpha = 0.0
         self.refreshControl.addTarget(self, action: #selector(self.refreshGalleries), for: .valueChanged)
