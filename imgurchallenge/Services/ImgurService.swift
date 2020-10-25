@@ -13,7 +13,7 @@ public class ImgurService {
     private static let clientSecret = "faed87cb80dd559cb5b855015f12210049f4e69c"
     private static let apiBase = "https://api.imgur.com/3"
 
-    public static func getTopOfWeek(page: Int = 0, completion: @escaping (_ galleries: [ImgurGalleryInfo]?) -> Void) {
+    public static func getTopOfWeek(page: Int = 10, completion: @escaping (_ galleries: [ImgurGalleryInfo]?) -> Void) {
         let urlString = self.apiBase + "/gallery/top/top/week/\(page)?showViral=false&mature=false"
 
         let headers: HTTPHeaders = [

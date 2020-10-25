@@ -49,20 +49,18 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
             self.startSpinner()
             self.imageViewMain.kf.setImage(with: imageUrl, completionHandler: { [weak self] result in
                 DispatchQueue.main.async {
-                    self?.stopSpinner()
-
                     switch result {
                     case .failure(_):
-                        self?.imageViewMain.image = UIImage(named: "imagePlaceholder")
+                        self?.imageViewMain.image = nil
+                        self?.stopSpinner(hide: false)
                     default:
-                        break
+                        self?.stopSpinner(hide: true)
                     }
                 }
             })
         }
         else {
-            self.imageViewSpinner.isHidden = true
-            self.imageViewMain.image = UIImage(named: "imagePlaceholder")
+            self.stopSpinner(hide: false)
         }
 
         self.labelViewCount.text = "\(imageFeedCard.views)"
@@ -75,8 +73,8 @@ class ImageFeedCardCollectionViewCell: UICollectionViewCell {
         self.imageViewSpinner.startRotating()
     }
 
-    private func stopSpinner() {
-        self.imageViewSpinner.isHidden = true
+    private func stopSpinner(hide: Bool) {
+        self.imageViewSpinner.isHidden = hide
         self.imageViewSpinner.stopRotating()
     }
 }
