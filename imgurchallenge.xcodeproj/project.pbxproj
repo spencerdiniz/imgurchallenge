@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		14352A6C2545BED100D546EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14352A6B2545BED100D546EB /* AppDelegate.swift */; };
 		14352A6E2545BED100D546EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14352A6D2545BED100D546EB /* SceneDelegate.swift */; };
-		14352A702545BED100D546EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14352A6F2545BED100D546EB /* ViewController.swift */; };
+		14352A702545BED100D546EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14352A6F2545BED100D546EB /* HomeViewController.swift */; };
 		14352A732545BED100D546EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14352A712545BED100D546EB /* Main.storyboard */; };
 		14352A752545BED200D546EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14352A742545BED200D546EB /* Assets.xcassets */; };
 		14352A782545BED200D546EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14352A762545BED200D546EB /* LaunchScreen.storyboard */; };
+		14352A822545C0B500D546EB /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14352A812545C0B500D546EB /* ColorPalette.swift */; };
+		145E77E62545C339002421A3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145E77E52545C339002421A3 /* Colors.xcassets */; };
+		145E77ED2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E77EB2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift */; };
+		145E77EE2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145E77EC2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib */; };
+		F1DA23466FB6D8BA81452D1F /* Pods_imgurchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72371B700C5D331A13AD598C /* Pods_imgurchallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14352A682545BED100D546EB /* imgurchallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgurchallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14352A6B2545BED100D546EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14352A6D2545BED100D546EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14352A6F2545BED100D546EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14352A6F2545BED100D546EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		14352A722545BED100D546EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14352A742545BED200D546EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14352A772545BED200D546EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14352A792545BED200D546EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14352A812545C0B500D546EB /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		145E77E52545C339002421A3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		145E77EB2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeedCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		145E77EC2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageFeedCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		2140CB996274D32B6B2DF603 /* Pods-imgurchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurchallenge.release.xcconfig"; path = "Target Support Files/Pods-imgurchallenge/Pods-imgurchallenge.release.xcconfig"; sourceTree = "<group>"; };
+		5CD9F72EBD4E0E23236E9E6E /* Pods-imgurchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurchallenge.debug.xcconfig"; path = "Target Support Files/Pods-imgurchallenge/Pods-imgurchallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		72371B700C5D331A13AD598C /* Pods_imgurchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imgurchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DA23466FB6D8BA81452D1F /* Pods_imgurchallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,8 @@
 			children = (
 				14352A6A2545BED100D546EB /* imgurchallenge */,
 				14352A692545BED100D546EB /* Products */,
+				B68817B561CF373A8EEA277B /* Pods */,
+				9E55665AA570848649A48DC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +73,34 @@
 			children = (
 				14352A6B2545BED100D546EB /* AppDelegate.swift */,
 				14352A6D2545BED100D546EB /* SceneDelegate.swift */,
-				14352A6F2545BED100D546EB /* ViewController.swift */,
+				14352A6F2545BED100D546EB /* HomeViewController.swift */,
+				145E77EB2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift */,
+				145E77EC2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib */,
 				14352A712545BED100D546EB /* Main.storyboard */,
 				14352A742545BED200D546EB /* Assets.xcassets */,
+				145E77E52545C339002421A3 /* Colors.xcassets */,
 				14352A762545BED200D546EB /* LaunchScreen.storyboard */,
 				14352A792545BED200D546EB /* Info.plist */,
+				14352A812545C0B500D546EB /* ColorPalette.swift */,
 			);
 			path = imgurchallenge;
+			sourceTree = "<group>";
+		};
+		9E55665AA570848649A48DC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72371B700C5D331A13AD598C /* Pods_imgurchallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B68817B561CF373A8EEA277B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CD9F72EBD4E0E23236E9E6E /* Pods-imgurchallenge.debug.xcconfig */,
+				2140CB996274D32B6B2DF603 /* Pods-imgurchallenge.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +110,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14352A7C2545BED200D546EB /* Build configuration list for PBXNativeTarget "imgurchallenge" */;
 			buildPhases = (
+				603DA98B1D4F2270F3000967 /* [CP] Check Pods Manifest.lock */,
 				14352A642545BED100D546EB /* Sources */,
 				14352A652545BED100D546EB /* Frameworks */,
 				14352A662545BED100D546EB /* Resources */,
@@ -125,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14352A782545BED200D546EB /* LaunchScreen.storyboard in Resources */,
+				145E77E62545C339002421A3 /* Colors.xcassets in Resources */,
+				145E77EE2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.xib in Resources */,
 				14352A752545BED200D546EB /* Assets.xcassets in Resources */,
 				14352A732545BED100D546EB /* Main.storyboard in Resources */,
 			);
@@ -132,14 +171,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		603DA98B1D4F2270F3000967 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-imgurchallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		14352A642545BED100D546EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14352A702545BED100D546EB /* ViewController.swift in Sources */,
+				14352A702545BED100D546EB /* HomeViewController.swift in Sources */,
 				14352A6C2545BED100D546EB /* AppDelegate.swift in Sources */,
 				14352A6E2545BED100D546EB /* SceneDelegate.swift in Sources */,
+				145E77ED2545CCF1002421A3 /* ImageFeedCardCollectionViewCell.swift in Sources */,
+				14352A822545C0B500D546EB /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +349,7 @@
 		};
 		14352A7D2545BED200D546EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CD9F72EBD4E0E23236E9E6E /* Pods-imgurchallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +369,7 @@
 		};
 		14352A7E2545BED200D546EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2140CB996274D32B6B2DF603 /* Pods-imgurchallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
