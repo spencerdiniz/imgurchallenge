@@ -7,5 +7,6 @@ target 'imgurchallenge' do
 
   # Pods for imgurchallenge
   pod 'Alamofire', '~> 5.3'
+  pod 'Kingfisher', '~> 5.15'
 
 end
