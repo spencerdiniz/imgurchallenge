@@ -1,6 +1,6 @@
 # imgurchallenge
 
-Open the workspace file **imgurchallenge.xcworkspace** to run the project. 
+Open the workspace **imgurchallenge.xcworkspace** to run the project. 
 
 - Using CocoaPods for dependency management. 
 - Not necessary to run 'pod install', because all decencies are included in the code (for convenience)
