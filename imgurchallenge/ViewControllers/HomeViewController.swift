@@ -8,14 +8,17 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    private let kCollectionViewMargin: CGFloat = 18.0
     private let kCollectionViewCellHeight: CGFloat = 240.0
+    private let kLandscapePadding: CGFloat = 40.0
+    private let kPortraitPadding: CGFloat = 18.0
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
     private let refreshControl = UIRefreshControl()
     private var galleries: [ImgurGalleryInfo] = []
     private var loadErrorView: LoadErrorView?
+
+    private var availableWidth: CGFloat = UIScreen.main.bounds.width
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,11 @@ class HomeViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.availableWidth = size.width
+        self.collectionView.reloadData()
     }
 
     private func setupErrorView() {
@@ -153,18 +161,15 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let width: CGFloat = {
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                return collectionView.bounds.width / 2.0 - (self.kCollectionViewMargin * 2.0)
-            }
-            else {
-                if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
-                    if orientation == .landscapeLeft || orientation == .landscapeRight {
-                        return collectionView.bounds.width / 2.0 - (self.kCollectionViewMargin * 2.0)
-                    }
+            if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation {
+                if orientation == .landscapeLeft || orientation == .landscapeRight {
+                    let cellsPerRow = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 3 : 2)
+                    return self.availableWidth / cellsPerRow - (self.kLandscapePadding * 2.0)
                 }
-
-                return collectionView.bounds.width - (self.kCollectionViewMargin * 2.0)
             }
+
+            let cellsPerRow = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 2 : 1)
+            return self.availableWidth / cellsPerRow - (self.kPortraitPadding * 2.0)
         }()
 
         let size = CGSize(width: width, height: self.kCollectionViewCellHeight)
